@@ -1,0 +1,17 @@
+filename=input('Enter a filename:-')
+file=open(filename,'r')
+filedata=file.read()
+nchars=file.tell()
+file.close()
+print('Number of characters in the given file:-',nchars)
+words=filedata.split()
+nwords=len(words)
+print('Number of words in the given file:-',nwords)
+nlines=len(filedata.splitlines())
+print('Number of lines in the given file:-',nlines)
+inputword=input('Enter a word you want to search in the given file:-')
+f=words.count(inputword)
+if (f==0):
+    print('{} does not exist in the given file.'.format(inputword))
+else:
+    print('Frequency of {} in the given file:-'.format(inputword),f)
